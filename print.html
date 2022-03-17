@@ -1,0 +1,1885 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Anchor Book</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1/what_is_anchor.html"><strong aria-hidden="true">1.1.</strong> What is Anchor</a></li><li class="chapter-item expanded "><a href="chapter_1/anchor_documentation.html"><strong aria-hidden="true">1.2.</strong> Anchor Documentation</a></li><li class="chapter-item expanded "><a href="chapter_1/prerequisites.html"><strong aria-hidden="true">1.3.</strong> Prerequisites</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_2/getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="chapter_2/hello_anchor.html"><strong aria-hidden="true">2.2.</strong> Hello, Anchor!</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3/anchor_programs_in-depth.html"><strong aria-hidden="true">3.</strong> Anchor Programs In-Depth</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3/essentials.html"><strong aria-hidden="true">3.1.</strong> Essentials</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3/high-level_overview.html"><strong aria-hidden="true">3.1.1.</strong> High-level Overview</a></li><li class="chapter-item expanded "><a href="chapter_3/the_accounts_struct.html"><strong aria-hidden="true">3.1.2.</strong> The Accounts Struct</a></li><li class="chapter-item expanded "><a href="chapter_3/the_program_module.html"><strong aria-hidden="true">3.1.3.</strong> The Program Module</a></li><li class="chapter-item expanded "><a href="chapter_3/errors.html"><strong aria-hidden="true">3.1.4.</strong> Errors</a></li><li class="chapter-item expanded "><a href="chapter_3/milestone_project_tic-tac-toe.html"><strong aria-hidden="true">3.1.5.</strong> Milestone Project - Tic-Tac-Toe</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3/intermediate.html"><strong aria-hidden="true">3.2.</strong> Intermediate</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3/CPIs.html"><strong aria-hidden="true">3.2.1.</strong> Cross-Program Invocations</a></li><li class="chapter-item expanded "><a href="chapter_3/PDAs.html"><strong aria-hidden="true">3.2.2.</strong> PDAs</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.3.</strong> Events</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.4.</strong> Constants</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.5.</strong> Zero-Copy</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.6.</strong> Access Control</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.7.</strong> Building &amp; Testing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.8.</strong> Milestone Project - The Nightclub</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Anchor BTS</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Dispatch</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> The Discriminator</div></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="chapter_5/anchor_tooling.html"><strong aria-hidden="true">5.</strong> Anchor Tooling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_5/cli.html"><strong aria-hidden="true">5.1.</strong> CLI Reference</a></li><li class="chapter-item expanded "><a href="chapter_5/avm.html"><strong aria-hidden="true">5.2.</strong> AVM Reference</a></li><li class="chapter-item expanded "><a href="chapter_5/anchor-toml_reference.html"><strong aria-hidden="true">5.3.</strong> Anchor.toml Reference</a></li></ol></li><li class="chapter-item expanded "><a href="reference_links.html"><strong aria-hidden="true">6.</strong> Reference Links</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Anchor Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Welcome to The Anchor Book! ⚓</p>
+<p>This chapter covers what anchor is, how its documentation is structured, and what you should know to have a good time with this guide.</p>
+<p>If you find errors or something doesn't work, please report it <a href="https://github.com/project-serum/anchor-book/issues">here</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-anchor"><a class="header" href="#what-is-anchor">What is Anchor</a></h1>
+<p>Anchor is a framework for quickly building secure Solana programs.</p>
+<p>With Anchor you can build programs quickly because it writes various boilerplate for you such as (de)serialization of accounts and instruction data.</p>
+<p>You can build secure programs more easily because Anchor handles certain security checks for you. On top of that, it allows you to succinctly define additional checks and keep them separate from your business logic.</p>
+<p>Both of these aspects mean that instead of working on the tedious parts of raw Solana programs, you can spend more time working on what matters most, your product.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anchor-documentation"><a class="header" href="#anchor-documentation">Anchor Documentation</a></h1>
+<p>Anchor's official documentation is split up into multiple parts, namely the guide, which is what you are reading right now and the references.</p>
+<p>There are three references. One for the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/">core library</a> and one for each official client library (<a href="https://project-serum.github.io/anchor/ts/index.html">typescript</a> and <a href="https://docs.rs/anchor-client/latest/anchor_client/">rust</a>). These references are close to the code and detailed. If you know what you are looking for and want to understand how it works more deeply, you'll find explanations there. </p>
+<p>However, if you're new to anchor, you need to know what anchor has to offer before you can even try to understand it more deeply. That's what this guide is for. Its purpose is to introduce you to anchor, to help you become familiar with it. It teaches you what features are available in Anchor so you can explore them yourself in detail using the references.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h1>
+<p>This guide (for now) assumes that you already have some knowledge of Solana programs and basic Rust. Ideally, you have already written a basic program without anchor. To make it through the essentials section, you should at least understand <a href="https://docs.solana.com/developing/programming-model/overview">Solana's programming model</a>. Additionally, you should've read chapter 1-9 of the <a href="https://doc.rust-lang.org/book/title-page.html">Rust book</a> which cover the basics of using Rust (Most of the time you don't need advanced Rust to write anchor programs).</p>
+<p>If you're not familiar with Solana at all, the official <a href="https://solana.com/developers">Solana developers page</a> is a good starting point.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<p>This chapter walks you through the installation process and the folder structure of an anchor workspace.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<h2 id="rust"><a class="header" href="#rust">Rust</a></h2>
+<p>Go <a href="https://www.rust-lang.org/tools/install">here</a> to install Rust.</p>
+<h2 id="solana"><a class="header" href="#solana">Solana</a></h2>
+<p>Go <a href="https://docs.solana.com/cli/install-solana-cli-tools">here</a> to install Solana and then run <code>solana-keygen new</code> to create a keypair at the default location. Anchor uses this keypair to run your program tests.</p>
+<h2 id="yarn"><a class="header" href="#yarn">Yarn</a></h2>
+<p>Go <a href="https://yarnpkg.com/getting-started/install">here</a> to install Yarn.</p>
+<h2 id="anchor"><a class="header" href="#anchor">Anchor</a></h2>
+<h3 id="installing-using-anchor-version-manager-avm-recommended"><a class="header" href="#installing-using-anchor-version-manager-avm-recommended">Installing using Anchor version manager (avm) (recommended)</a></h3>
+<p>Anchor version manager is a tool for using multiple versions of the anchor-cli. It will require the same dependencies as building from source. It is recommended you uninstall the NPM package if you have it installed.</p>
+<p>Install <code>avm</code> using Cargo. Note this will replace your <code>anchor</code> binary if you had one installed.</p>
+<pre><code>cargo install --git https://github.com/project-serum/anchor avm --locked --force
+</code></pre>
+<p>Install the latest version of the CLI using <code>avm</code>. You can also use the command to upgrade to the latest release in the future.</p>
+<pre><code>avm use latest
+</code></pre>
+<p>Verify the installation.</p>
+<pre><code>anchor --version
+</code></pre>
+<h3 id="install-using-pre-build-binary-on-x86_64-linux"><a class="header" href="#install-using-pre-build-binary-on-x86_64-linux">Install using pre-build binary on x86_64 Linux</a></h3>
+<p>Anchor binaries are available via an NPM package <a href="https://www.npmjs.com/package/@project-serum/anchor-cli"><code>@project-serum/anchor-cli</code></a>. Only <code>x86_64</code> Linux is supported currently, you must build from source for other OS'.</p>
+<h3 id="build-from-source-for-other-operating-systems-without-avm"><a class="header" href="#build-from-source-for-other-operating-systems-without-avm">Build from source for other operating systems without avm</a></h3>
+<p>We can also use Cargo to install the CLI directly. Make sure that the <code>--tag</code> argument uses the version you want (the version here is just an example).</p>
+<pre><code>cargo install --git https://github.com/project-serum/anchor --tag v0.22.0 anchor-cli --locked
+</code></pre>
+<p>On Linux systems you may need to install additional dependencies if cargo install fails. On Ubuntu,</p>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get install -y pkg-config build-essential libudev-dev
+</code></pre>
+<p>Now verify the CLI is installed properly.</p>
+<pre><code>anchor --version
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hello-anchor"><a class="header" href="#hello-anchor">Hello, Anchor!</a></h1>
+<p>To initialize a new project, simply run:</p>
+<pre><code>anchor init &lt;new-workspace-name&gt;
+</code></pre>
+<p>This creates a new anchor workspace you can move into. The following are some of the important files in the folder:</p>
+<ul>
+<li>The <code>.anchor</code> folder: It includes the most recent program logs and a local ledger that is used for testing</li>
+<li>The <code>app</code> folder: An empty folder that you can use to hold your frontend if you use a monorepo</li>
+<li>The <code>programs</code> folder: This folder contains your programs. It can contain multiple but initially only contains a program with the same name as <code>&lt;new-workspace-name&gt;</code>. This program already contains a <code>lib.rs</code> file with some sample code.</li>
+<li>The <code>tests</code> folder: The folder that contains your E2E tests. It will already include a file that tests the sample code in the <code>programs/&lt;new-workspace-name&gt;</code>.</li>
+<li>The <code>migrations</code> folder: In this folder you can save your deploy and migration scripts for your programs.</li>
+<li>The <code>Anchor.toml</code> file: This file configures workspace wide settings for your programs. Initially, it configures
+<ul>
+<li>The addresses of your programs on localnet (<code>[programs.localnet]</code>)</li>
+<li>A registry your program can be pushed to (<code>[registry]</code>)</li>
+<li>A provider which can be used in your tests (<code>[provider]</code>)</li>
+<li>Scripts that Anchor executes for you (<code>[scripts]</code>). The <code>test</code> script is run when running <code>anchor test</code>. You can run your own scripts with <code>anchor run &lt;script_name&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anchor-programs-in-depth"><a class="header" href="#anchor-programs-in-depth">Anchor Programs In-Depth</a></h1>
+<p>This section explains how you can use Anchor to build Solana programs. Each section includes code examples, so it is recommended that you start up a new Anchor project before you proceed so you can play around with the code yourself while reading. Call it <code>hello-anchor</code>.</p>
+<pre><code>anchor init hello-anchor
+</code></pre>
+<p>This sections begins with the essentials and then explains more intermediate content afterwards.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="essentials"><a class="header" href="#essentials">Essentials</a></h1>
+<p>This chapter teaches you Anchor essentials and includes a milestone project with which you can test your understanding.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="high-level-overview"><a class="header" href="#high-level-overview">High-level Overview</a></h1>
+<p>An Anchor program consists of three parts. The <code>program</code> module, the Accounts structs which are marked with <code>#[derive(Accounts)]</code>, and the <code>declareId</code> macro. The <code>program</code> module is where you write your business logic. The Accounts structs is where you validate accounts. The<code>declareId</code> macro creates an <code>ID</code> field that stores the address of your program.</p>
+<p>When you start up a new Anchor project, you'll see the following:</p>
+<pre><code class="language-rust ignore">// use this import to gain access to common anchor features
+use anchor_lang::prelude::*;
+
+// declare an id for your program
+declare_id!(&quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&quot;);
+
+// write your business logic here
+#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn initialize(_ctx: Context&lt;Initialize&gt;) -&gt; Result&lt;()&gt; {
+        Ok(())
+    }
+}
+
+// validate incoming accounts here
+#[derive(Accounts)]
+pub struct Initialize {}
+</code></pre>
+<p>We'll go into more detail in the next sections but for now, note that the way an endpoint is connected to its corresponding Accounts struct is the <code>ctx</code> argument in the endpoint. The argument is of type <code>Context</code> which is generic over an Accounts struct, i.e. this is where you put the name of your account validation struct. In this example, it's <code>Initialize</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-accounts-struct"><a class="header" href="#the-accounts-struct">The Accounts Struct</a></h1>
+<p>The Accounts struct is where you define which accounts your instruction expects and which constraints these accounts should adhere to. You do this via two constructs: Types and constraints.</p>
+<h2 id="types"><a class="header" href="#types">Types</a></h2>
+<blockquote>
+<p><a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/index.html">Account Types Reference</a></p>
+</blockquote>
+<p>Each type has a specific use case in mind. Detailed explanations for the types can be found in the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/index.html">reference</a>. We will briefly explain the most important type here, the <code>Account</code> type.</p>
+<h3 id="the-account-type"><a class="header" href="#the-account-type">The Account Type</a></h3>
+<blockquote>
+<p><a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/account/struct.Account.html">Account Reference</a></p>
+</blockquote>
+<p>The <code>Account</code> type is used when an instruction is interested in the deserialized data of the account. Consider the following example where we set some data in an account:</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+
+declare_id!(&quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&quot;);
+
+#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        ctx.accounts.my_account.data = data;
+        Ok(())
+    }
+}
+
+#[account]
+#[derive(Default)]
+pub struct MyAccount {
+    data: u64
+}
+
+#[derive(Accounts)]
+pub struct SetData&lt;'info&gt; {
+    #[account(mut)]
+    pub my_account: Account&lt;'info, MyAccount&gt;
+}
+</code></pre>
+<p><code>Account</code> is generic over <code>T</code>. This <code>T</code> is a type you can create yourself to store data. In this example, we have created a struct <code>MyAccount</code> with a single <code>data</code> field to store a <code>u64</code>. Account requires <code>T</code> to implement certain functions (e.g. functions that (de)serialize <code>T</code>). Most of the time, you can use the <code>#[account]</code> attribute to add these functions to your data, as is done in the example.</p>
+<p>Most importantly, the <code>#[account]</code> attribute sets the owner of that data to the <code>ID</code> (the one we created earlier with <code>declareId</code>) of the crate <code>#[account]</code> is used in. The Account type can then check for you that the <code>AccountInfo</code> passed into your instruction has its <code>owner</code> field set to the correct program. In this example, <code>MyAccount</code> is declared in our own crate so <code>Account</code> will verify that the owner of <code>my_account</code> equals the address we declared with <code>declareId</code>.</p>
+<h4 id="using-accounta-t-with-non-anchor-program-accounts"><a class="header" href="#using-accounta-t-with-non-anchor-program-accounts">Using <code>Account&lt;'a, T&gt;</code> with non-anchor program accounts</a></h4>
+<p>There may be cases where you want your program to interact with a non-Anchor program. You can still get all the benefits of <code>Account</code> but you have to write a custom wrapper type instead of using <code>#[account]</code>. For instance, Anchor provides wrapper types for the token program accounts so they can be used with <code>Account</code>.</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+use anchor_spl::token::TokenAccount;
+
+declare_id!(&quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&quot;);
+
+#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        if ctx.accounts.token_account.amount &gt; 0 {
+            ctx.accounts.my_account.data = data;
+        }
+        Ok(())
+    }
+}
+
+#[account]
+#[derive(Default)]
+pub struct MyAccount {
+    data: u64,
+    mint: Pubkey
+}
+
+#[derive(Accounts)]
+pub struct SetData&lt;'info&gt; {
+    #[account(mut)]
+    pub my_account: Account&lt;'info, MyAccount&gt;,
+    #[account(
+        constraint = my_account.mint == token_account.mint,
+        has_one = owner
+    )]
+    pub token_account: Account&lt;'info, TokenAccount&gt;,
+    pub owner: Signer&lt;'info&gt;
+}
+</code></pre>
+<p>To run this example, add <code>anchor-spl = &quot;&lt;version&gt;&quot;</code> to the dependencies section in your <code>Cargo.toml</code>, located in the <code>programs/&lt;your-project-name&gt;/</code> directory. <code>&lt;version&gt;</code> should be equal to the <code>anchor-lang</code> version you're using.</p>
+<p>In this example, we set the <code>data</code> field of an account if the caller has admin rights. We decide whether the caller is an admin by checking whether they own admin tokens for the account they want to change. We do most of this via constraints which we will look at in the next section.
+The important thing to take away is that we use the <code>TokenAccount</code> type (that wraps around the token program's <code>Account</code> struct and adds the required functions) to make anchor ensure that the incoming account is owned by the token program and to make anchor deserialize it. This means we can use the <code>TokenAccount</code> properties inside our constraints (e.g. <code>token_account.mint</code>) as well as in the instruction function.</p>
+<p>Check out the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/account/struct.Account.html">reference for the Account type</a> to learn how to implement your own wrapper types for non-anchor programs.</p>
+<h2 id="constraints"><a class="header" href="#constraints">Constraints</a></h2>
+<blockquote>
+<p><a href="https://docs.rs/anchor-lang/latest/anchor_lang/derive.Accounts.html">Constraints reference</a></p>
+</blockquote>
+<p>Account types can do a lot of work for you but they're not dynamic enough to handle all the security checks a secure program requires.</p>
+<p>Add constraints to an account with the following format:</p>
+<pre><code class="language-rust ignore">#[account(&lt;constraints&gt;)]
+pub account: AccountType
+</code></pre>
+<p>Some constraints support custom Errors (we will explore errors <a href="chapter_3/./errors.html">later</a>):</p>
+<pre><code class="language-rust ignore">#[account(...,&lt;constraint&gt; @ MyError::MyErrorVariant, ...)]
+pub account: AccountType
+</code></pre>
+<p>For example, in the examples above, we used the <code>mut</code> constraint to indicate that <code>my_account</code> should be mutable. We used <code>has_one</code> to check that <code>token_account.owner == owner.key()</code>. And finally we used <code>constraint</code> to check an arbitrary expression; in this case, whether the incoming <code>TokenAccount</code> belongs to the admin mint.</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct SetData&lt;'info&gt; {
+    #[account(mut)]
+    pub my_account: Account&lt;'info, MyAccount&gt;,
+    #[account(
+        constraint = my_account.mint == token_account.mint,
+        has_one = owner
+    )]
+    pub token_account: Account&lt;'info, TokenAccount&gt;,
+    pub owner: Signer&lt;'info&gt;
+}
+</code></pre>
+<p>You can find information about all constraints in the reference. We will cover some of the most important ones in the milestone project at the end of the Essentials section.</p>
+<h2 id="safety-checks"><a class="header" href="#safety-checks">Safety checks</a></h2>
+<p>Two of the Anchor account types, <a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/account_info/index.html">AccountInfo</a> and <a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/unchecked_account/index.html">UncheckedAccount</a> do not implement any checks on the account being passed. Anchor implements safety checks that encourage additional documentation describing why additional checks are not necesssary.</p>
+<p>Attempting to build a program containing the following excerpt with <code>anchor build</code>:</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct Initialize&lt;'info&gt; {
+    pub potentially_dangerous: UncheckedAccount&lt;'info&gt;
+}
+</code></pre>
+<p>will result in an error similar to the following:</p>
+<pre><code>Error:
+        /anchor/tests/unchecked/programs/unchecked/src/lib.rs:15:8
+        Struct field &quot;potentially_dangerous&quot; is unsafe, but is not documented.
+        Please add a `/// CHECK:` doc comment explaining why no checks through types are necessary.
+        See https://book.anchor-lang.com/chapter_3/the_accounts_struct.html#safety-checks for more information.
+</code></pre>
+<p>To fix this, write a doc comment describing the potential security implications, e.g.:</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct Initialize&lt;'info&gt; {
+    /// CHECK: This is not dangerous because we don't read or write from this account
+    pub potentially_dangerous: UncheckedAccount&lt;'info&gt;
+}
+</code></pre>
+<p>Note the doc comment needs to be a <a href="https://doc.rust-lang.org/reference/comments.html#doc-comments">line or block doc comment</a> (/// or /**) to be interepreted as doc attribute by Rust. Double slash comments (//) are not interpreted as such.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-program-module"><a class="header" href="#the-program-module">The Program Module</a></h1>
+<p>The program module is where you define your business logic. You do so by writing functions which can be called by clients or other programs. You've already seen one example of such a function, the <code>set_data</code> function from the previous section.</p>
+<pre><code class="language-rust ignore">#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        if ctx.accounts.token_account.amount &gt; 0 {
+            ctx.accounts.my_account.data = data;
+        }
+        Ok(())
+    }
+}
+</code></pre>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<blockquote>
+<p><a href="https://docs.rs/anchor-lang/latest/anchor_lang/context/index.html">Context Reference</a></p>
+</blockquote>
+<p>Each endpoint function takes a <code>Context</code> type as its first argument. Through this context argument it can access the accounts (<code>ctx.accounts</code>), the program id (<code>ctx.program_id</code>) of the executing program, and the remaining accounts (<code>ctx.remaining_accounts</code>). <code>remaining_accounts</code> is a vector that contains all accounts that were passed into the instruction but are not declared in the <code>Accounts</code> struct. This is useful when you want your function to handle a variable amount of accounts, e.g. when initializing a game with a variable number of players.</p>
+<h2 id="instruction-data"><a class="header" href="#instruction-data">Instruction Data</a></h2>
+<p>If your function requires instruction data, you can add it by adding arguments to the function after the context argument. Anchor will then automatically deserialize the instruction data into the arguments. You can have as many as you like. You can even pass in your own types as long as you use<code>#[derive(AnchorDeserialize)]</code> on them or implement <code>AnchorDeserialize</code> for them yourself. Here's an example with a custom type used as an instruction data arg:</p>
+<pre><code class="language-rust ignore">...
+
+#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: Data) -&gt; Result&lt;()&gt; {
+        ctx.accounts.my_account.data = data.data;
+        ctx.accounts.my_account.age = data.age;
+        Ok(())
+    }
+}
+
+#[account]
+#[derive(Default)]
+pub struct MyAccount {
+    pub data: u64,
+    pub age: u8
+}
+
+#[derive(AnchorSerialize, AnchorDeserialize, Eq, PartialEq, Clone, Copy, Debug)]
+pub struct Data {
+    pub data: u64,
+    pub age: u8
+}
+
+...
+</code></pre>
+<p>Conveniently, <code>#[account]</code> implements <code>Anchor(De)Serialize</code> for <code>MyAccount</code>, so the example above can be simplified.</p>
+<pre><code class="language-rust ignore">...
+
+#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: MyAccount) -&gt; Result&lt;()&gt; {
+        ctx.accounts.my_account.set_inner(data);
+        Ok(())
+    }
+}
+
+#[account]
+#[derive(Default)]
+pub struct MyAccount {
+    pub data: u64,
+    pub age: u8
+}
+
+...
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="errors"><a class="header" href="#errors">Errors</a></h1>
+<p>There are three types of errors in anchor programs. Anchor Internal Errors, Custom Errors, and non-anchor errors.</p>
+<p>The autogenerated clients can automatically parse Anchor Internal Errors and Custom Errors so they can display the error code and error message. This is not possible for non-anchor errors where clients just return the raw error returned by the underlying solana client libraries.</p>
+<blockquote>
+<p>(Ultimately, all programs return the same Error: The <a href="https://docs.rs/solana-program/latest/solana_program/program_error/enum.ProgramError.html"><code>ProgramError</code></a>. This Error has a field for a custom error number. This is where Anchor puts its internal and custom error codes. The autogenerated clients read this number and read the IDL (where custom errors' numbers are mapped to their messages) to display the correct error messages (The Anchor internal error number=&gt;message mapping is hardcoded in the clients). Doing it this way means that there is no way to display dynamic custom error messages because all error messages are hardcoded in the IDL. Very soon, anchor will use logs instead of relying only on the returned error code number to emit errors. These logs can also be read by the client and allow dynamic content.)</p>
+</blockquote>
+<h2 id="anchor-internal-errors"><a class="header" href="#anchor-internal-errors">Anchor Internal Errors</a></h2>
+<blockquote>
+<p><a href="https://docs.rs/anchor-lang/latest/anchor_lang/error/enum.ErrorCode.html">Anchor Internal Error Code Reference</a></p>
+</blockquote>
+<p>Anchor has many different internal error codes. These are not meant to be used by users, but it's useful to study the reference to learn about the mappings between codes and their causes. They are, for example, thrown when a constraint has been violated, e.g. when an account is marked with <code>mut</code> but its <code>is_writable</code> property is <code>false</code>.</p>
+<h2 id="custom-errors"><a class="header" href="#custom-errors">Custom Errors</a></h2>
+<p>You can add errors that are unique to your program by using the <code>error_code</code> attribute. </p>
+<p>Simply add it to an enum with a name of your choice. You can then use the variants of the enum as errors in your program. Additionally, you can add a message attribute to the individual variants. Clients will then display this error message if the error occurs. Custom Error code numbers start at the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/error/constant.ERROR_CODE_OFFSET.html">custom error offset</a>.</p>
+<p>To actually throw an error use the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/macro.err.html"><code>err!</code></a> or the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/prelude/macro.error.html"><code>error!</code></a> macro. These add file and line information to the error that is then logged by anchor.</p>
+<pre><code class="language-rust ignore">#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: MyAccount) -&gt; Result&lt;()&gt; {
+        if data.data &gt;= 100 {
+            return err!(MyError::DataTooLarge);    
+        }
+        ctx.accounts.my_account.set_inner(data);
+        Ok(())
+    }
+}
+
+
+#[error_code]
+pub enum MyError {
+    #[msg(&quot;MyAccount may only hold data below 100&quot;)]
+    DataTooLarge
+}
+</code></pre>
+<h3 id="require"><a class="header" href="#require">require!</a></h3>
+<p>You can use the <a href="https://docs.rs/anchor-lang/latest/anchor_lang/macro.require.html"><code>require</code></a> macro to simplify writing errors. The code above can be simplified to this (Note that the <code>&gt;=</code> flips to <code>&lt;</code>):</p>
+<pre><code class="language-rust ignore">#[program]
+mod hello_anchor {
+    use super::*;
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: MyAccount) -&gt; Result&lt;()&gt; {
+        require!(data.data &lt; 100, MyError::DataTooLarge); 
+        ctx.accounts.my_account.set_inner(data);
+        Ok(())
+    }
+}
+
+
+#[error_code]
+pub enum MyError {
+    #[msg(&quot;MyAccount may only hold data below 100&quot;)]
+    DataTooLarge
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="milestone-project---tic-tac-toe"><a class="header" href="#milestone-project---tic-tac-toe">Milestone Project - Tic-Tac-Toe</a></h1>
+<blockquote>
+<p><a href="https://github.com/project-serum/anchor-book/tree/master/programs/tic-tac-toe">Program Code</a></p>
+</blockquote>
+<p>You're now ready to build your first anchor project. Create a new anchor workspace with</p>
+<pre><code>anchor init tic-tac-toe
+</code></pre>
+<p>The program will have 2 instructions. First, we need to setup the game. We need to save who is playing it and create a board to play on. Then, the player take turns until there is a winner or a tie.</p>
+<p>We recommend to keep programs in a single <code>lib.rs</code> file until they get too big. We would keep this program in a single file too but have split up the reference implementation for demonstration purposes. Check out the section at the end of this chapter to learn how to split up a program into multiple files.</p>
+<h2 id="setting-up-the-game"><a class="header" href="#setting-up-the-game">Setting up the game</a></h2>
+<h3 id="state"><a class="header" href="#state">State</a></h3>
+<p>Let's begin by thinking about which data we should store. Each game has players, turns, a board, and a game state. This game state describes whether the game is active, tied, or one of the two players won. We can save all this data in an account. This means that each new game will have its own account. Add the following to the bottom of the <code>lib.rs</code> file:</p>
+<pre><code class="language-rust ignore">#[account]
+pub struct Game {
+    players: [Pubkey; 2],          // 64
+    turn: u8,                      // 1
+    board: [[Option&lt;Sign&gt;; 3]; 3], // 9 * (1 + 1) = 18
+    state: GameState,              // 32 + 1
+}
+</code></pre>
+<p>This is the game account. Next to the field definitions, you can see how many bytes each field requires. This will be very important later. Let's also add the <code>Sign</code> and the <code>GameState</code> type.</p>
+<pre><code class="language-rust ignore">#[derive(AnchorSerialize, AnchorDeserialize, Clone, PartialEq, Eq)]
+pub enum GameState {
+    Active,
+    Tie,
+    Won { winner: Pubkey },
+}
+
+#[derive(
+    AnchorSerialize,
+    AnchorDeserialize,
+    FromPrimitive,
+    ToPrimitive,
+    Copy,
+    Clone,
+    PartialEq,
+    Eq
+)]
+pub enum Sign {
+    X,
+    O,
+}
+</code></pre>
+<p>Both <code>GameState</code> and <code>Sign</code> derive some traits. <code>AnchorSerialize</code> and <code>AnchorDeserialize</code> are the crucial ones. All types that are used in types that are marked with <code>#[account]</code> must implement these two traits (or be marked with <code>#[account]</code> themselves). All other traits are important to our game logic and we are going to use them later. Generally, it is good practice to derive even more traits to make the life of others trying to interface with your program easier (see <a href="https://rust-lang.github.io/api-guidelines/interoperability.html#types-eagerly-implement-common-traits-c-common-traits">Rust's API guidelines</a>) but for brevity's sake, we are not going to do that in this guide.</p>
+<p>This won't quite work yet because <code>FromPrimitive</code> and <code>ToPrimitive</code> are unknown. Go to the <code>Cargo.toml</code> file right outside <code>src</code> (not the one at the root of the workspace) and add these two dependencies:</p>
+<pre><code class="language-toml">num-traits = &quot;0.2&quot;
+num-derive = &quot;0.3&quot;
+</code></pre>
+<p>Then, import them at the top of <code>lib.rs</code>:</p>
+<pre><code class="language-rust ignore">use num_derive::*;
+use num_traits::*;
+</code></pre>
+<h3 id="the-setup-instruction"><a class="header" href="#the-setup-instruction">The Setup Instruction</a></h3>
+<p>Before we write any game logic, we can add the instruction that will set up the game in its initial state. Rename the already existing instruction function and accounts struct to <code>setup_game</code> and <code>SetupGame</code> respectively. Now think about which accounts are needed to set up the game. Clearly, we need the game account. Before we can fill it with values, we need to create it. For that, we use the <code>init</code> constraint.</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct SetupGame&lt;'info&gt; {
+    #[account(init)]
+    pub game: Account&lt;'info, Game&gt;
+}
+</code></pre>
+<p><code>init</code> immediately shouts at us and tells us to add a payer. Why do we need it? Because <code>init</code> creates <code>rent-exempt</code> accounts and someone has to pay for that. Naturally, if we want to take money from someone, we should make them sign as well as mark their account as mutable.</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct SetupGame&lt;'info&gt; {
+    #[account(init, payer = player_one)]
+    pub game: Account&lt;'info, Game&gt;,
+    #[account(mut)]
+    pub player_one: Signer&lt;'info&gt;
+}
+</code></pre>
+<p><code>init</code> is not happy yet. It wants the system program to be inside the struct because <code>init</code> creates the game account by making a call to that program. So let's add it.</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct SetupGame&lt;'info&gt; {
+    #[account(init, payer = player_one)]
+    pub game: Account&lt;'info, Game&gt;,
+    #[account(mut)]
+    pub player_one: Signer&lt;'info&gt;,
+    pub system_program: Program&lt;'info, System&gt;
+}
+</code></pre>
+<p>There's one more thing to do to complete <code>SetupGame</code>. Every account is created with a fixed amount of space. <code>init</code> can try to infer how much space an account needs if it derives <code>Default</code>. So let's implement <code>Default</code> for <code>Game</code></p>
+<pre><code class="language-rust ignore">#[account]
+#[derive(Default)] &lt;-- add this
+pub struct Game {...
+</code></pre>
+<p>and <code>GameState</code>.</p>
+<pre><code class="language-rust ignore">impl Default for GameState {
+    fn default() -&gt; Self {
+        Self::Active
+    }
+}
+</code></pre>
+<p>And with this, <code>SetupGame</code> is complete and we can move on to the <code>setup_game</code> function. (If you like playing detective, you can pause here and try to figure out why what we just did will not work. Hint: Have a look at the <a href="https://borsh.io/">specification</a> of the serialization library Anchor uses. If you cannot figure it out, don't worry. We are going to fix it very soon, together.)</p>
+<p>Let's start by adding an argument to the <code>setup_game</code> function.</p>
+<pre><code class="language-rust ignore">pub fn setup_game(ctx: Context&lt;SetupGame&gt;, player_two: Pubkey) -&gt; Result&lt;()&gt; {
+    Ok(())
+}
+</code></pre>
+<p>Why didn't we just add <code>player_two</code> as an account in the accounts struct? There are two reasons for this. First, adding it there requires a little more space in the transaction that saves whether the account is writable and whether it's a signer. But we care about neither of that. We just want the address. This brings us to the second and more important reason: Simultaneous network transactions can affect each other if they share the same accounts. For example, if we add <code>player_two</code> to the accounts struct, during our transaction, no other transaction can edit <code>player_two</code>'s account. Therefore, we block all other transactions that want to edit <code>player_two</code>'s account, even though we neither want to read from nor write to the account. We just care about its address!</p>
+<p>Finish the instruction function by setting the game to its initial values:</p>
+<pre><code class="language-rust ignore">pub fn setup_game(ctx: Context&lt;SetupGame&gt;, player_two: Pubkey) -&gt; Result&lt;()&gt; {
+    let game = &amp;mut ctx.accounts.game;
+    game.players = [ctx.accounts.player_one.key(), player_two];
+    game.turn = 1;
+    Ok(())
+}
+</code></pre>
+<p>Now, run <code>anchor build</code>. On top of compiling your program, this command creates an <a href="https://en.wikipedia.org/wiki/Interface_description_language">IDL</a> for your program. You can find it in <code>target/idl</code>. The anchor typescript client can automatically parse this IDL and generate functions based on it. What this means is that each anchor program gets its own typescript client for free! (Technically, you don't have to call anchor build before testing. <code>anchor test</code> will do it for you.)</p>
+<h3 id="testing-the-setup-instruction"><a class="header" href="#testing-the-setup-instruction">Testing the Setup Instruction</a></h3>
+<p>Time to test our code! Head over into the <code>tests</code> folder in the root directory. Open the <code>tic-tac-toe.ts</code> file and remove the existing <code>it</code> test. Then, put the following into the <code>describe</code> section:</p>
+<pre><code class="language-typescript">  it('setup game!', async() =&gt; {
+    const gameKeypair = anchor.web3.Keypair.generate();
+    const playerOne = program.provider.wallet;
+    const playerTwo = anchor.web3.Keypair.generate();
+    await program.rpc.setupGame(playerTwo.publicKey, {
+      accounts: {
+        game: gameKeypair.publicKey,
+        playerOne: playerOne.publicKey,
+        systemProgram: anchor.web3.SystemProgram.programId
+      },
+      signers: [gameKeypair]
+    });
+
+    let gameState = await program.account.game.fetch(gameKeypair.publicKey);
+    expect(gameState.turn).to.equal(1);
+    expect(gameState.players)
+      .to
+      .eql([playerOne.publicKey, playerTwo.publicKey]);
+    expect(gameState.state).to.eql({ active: {} });
+    expect(gameState.board)
+      .to
+      .eql([[null,null,null],[null,null,null],[null,null,null]]);
+  });
+</code></pre>
+<p>and add this to the top of your file:</p>
+<pre><code class="language-typescript">import { expect } from 'chai';
+</code></pre>
+<p>The test begins by creating some keypairs. Importantly, <code>playerOne</code> is not a keypair but the wallet of the program's provider. The provider details are defined in the <code>Anchor.toml</code> file in the root of the project.
+Then, we send the transaction. Because the anchor typescript client has parsed the IDL, all transaction inputs have types. If you remove one of the accounts for example, typescript will complain. 
+The structure of the transaction function is as follows: First come the instruction arguments. For this function, the public key of the second player. Then come the accounts. Lastly, we add a signers array. We have to add the <code>gameKeypair</code> here because whenever an account gets created, it has to sign its creation transaction. We don't have to add <code>playerOne</code> even though we gave it the <code>Signer</code> type in the program because it is the program provider and therefore signs the transaction by default.</p>
+<p>After the transaction returns, we can fetch the state of the game account. You can fetch account state using the <code>program.account</code> namespace. 
+Finally, we verify the game has been set up properly. Anchor's typescript client deserializes rust enums like this: <code>{ active: {}}</code> for a fieldless variant and <code>{ won: { winner: Pubkey }}</code> for a variant with fields. The <code>None</code> variant of <code>Option</code> becomes <code>null</code>. The <code>Some(x)</code> variant becomes whatever <code>x</code> deserializes to.</p>
+<p>Now, run <code>anchor test</code>. This starts up (and subsequently shuts down) a local validator (make sure you don't have one running) and runs your tests using the test script defined in <code>Anchor.toml</code>.</p>
+<blockquote>
+<p>When you adjust your test files it may happen that you'll see errors everywhere.
+This is likely because the test file is looking for types from your program that haven't been generated yet.
+To generate them, run <code>anchor build</code>. This builds the program and creates the idl and typescript types.</p>
+</blockquote>
+<p>If you get the error <code>Error: Unable to read keypair file</code> when running the test, you likely need to generate a Solana keypair using <code>solana-keygen new</code>.</p>
+<h2 id="playing-the-game"><a class="header" href="#playing-the-game">Playing the game</a></h2>
+<h3 id="the-play-instruction"><a class="header" href="#the-play-instruction">The Play Instruction</a></h3>
+<p>The <code>Play</code> accounts struct is straightforward. We need the game and a player:</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct Play&lt;'info&gt; {
+    #[account(mut)]
+    pub game: Account&lt;'info, Game&gt;,
+    pub player: Signer&lt;'info&gt;,
+}
+</code></pre>
+<p><code>player</code> needs to sign or someone else could play for the player.</p>
+<p>Next, add the game logic:</p>
+<pre><code class="language-rust ignore">impl Game {
+    pub fn is_active(&amp;self) -&gt; bool {
+        self.state == GameState::Active
+    }
+
+    fn current_player_index(&amp;self) -&gt; usize {
+        ((self.turn - 1) % 2) as usize
+    }
+
+    pub fn current_player(&amp;self) -&gt; Pubkey {
+        self.players[self.current_player_index()]
+    }
+
+    pub fn play(&amp;mut self, tile: &amp;Tile) -&gt; Result&lt;()&gt; {
+        require!(self.is_active(), TicTacToeError::GameAlreadyOver);
+
+        match tile {
+            tile
+            @ Tile {
+                row: 0..=2,
+                column: 0..=2,
+            } =&gt; match self.board[tile.row as usize][tile.column as usize] {
+                Some(_) =&gt; return err!(TicTacToeError::TileAlreadySet),
+                None =&gt; {
+                    self.board[tile.row as usize][tile.column as usize] =
+                        Some(Sign::from_usize(self.current_player_index()).unwrap());
+                }
+            },
+            _ =&gt; return err!(TicTacToeError::TileOutOfBounds),
+        }
+
+        self.update_state();
+
+        if GameState::Active == self.state {
+            self.turn += 1;
+        }
+
+        Ok(())
+    }
+
+    fn is_winning_trio(&amp;self, trio: [(usize, usize); 3]) -&gt; bool {
+        let [first, second, third] = trio;
+        self.board[first.0][first.1].is_some()
+            &amp;&amp; self.board[first.0][first.1] == self.board[second.0][second.1]
+            &amp;&amp; self.board[first.0][first.1] == self.board[third.0][third.1]
+    }
+
+    fn update_state(&amp;mut self) {
+        for i in 0..=2 {
+            // three of the same in one row
+            if self.is_winning_trio([(i, 0), (i, 1), (i, 2)]) {
+                self.state = GameState::Won {
+                    winner: self.current_player(),
+                };
+                return;
+            }
+            // three of the same in one column
+            if self.is_winning_trio([(0, i), (1, i), (2, i)]) {
+                self.state = GameState::Won {
+                    winner: self.current_player(),
+                };
+                return;
+            }
+        }
+
+        // three of the same in one diagonal
+        if self.is_winning_trio([(0, 0), (1, 1), (2, 2)])
+            || self.is_winning_trio([(0, 2), (1, 1), (2, 0)])
+        {
+            self.state = GameState::Won {
+                winner: self.current_player(),
+            };
+            return;
+        }
+
+        // reaching this code means the game has not been won,
+        // so if there are unfilled tiles left, it's still active
+        for row in 0..=2 {
+            for column in 0..=2 {
+                if self.board[row][column].is_none() {
+                    return;
+                }
+            }
+        }
+
+        // game has not been won
+        // game has no more free tiles
+        // -&gt; game ends in a tie
+        self.state = GameState::Tie;
+    }
+}
+</code></pre>
+<p>We are not going to explore this code in detail together because it's rather simple rust code. It's just tic-tac-toe after all! Roughly, what happens when <code>play</code> is called:</p>
+<ol>
+<li>Return error if game is over or
+return error if given row or column are outside the 3x3 board or
+return error if tile on board is already set</li>
+<li>Determine current player and set tile to X or O</li>
+<li>Update game state</li>
+<li>If game is still active, increase the turn</li>
+</ol>
+<p>Currently, the code doesn't compile because we need to add the <code>Tile</code></p>
+<pre><code class="language-rust ignore">#[derive(AnchorSerialize, AnchorDeserialize)]
+pub struct Tile {
+    row: u8,
+    column: u8,
+}
+</code></pre>
+<p>and the <code>TicTacToeError</code> type.</p>
+<pre><code class="language-rust ignore">#[error_code]
+pub enum TicTacToeError {
+    TileOutOfBounds,
+    TileAlreadySet,
+    GameAlreadyOver,
+    NotPlayersTurn,
+}
+</code></pre>
+<p>Finally, we can add the <code>play</code> function inside the program module.</p>
+<pre><code class="language-rust ignore">pub fn play(ctx: Context&lt;Play&gt;, tile: Tile) -&gt; Result&lt;()&gt; {
+    let game = &amp;mut ctx.accounts.game;
+
+    require!(
+        game.current_player() == ctx.accounts.player.key(),
+        TicTacToeError::NotPlayersTurn
+    );
+
+    game.play(&amp;tile)
+}
+</code></pre>
+<p>We've checked in the accounts struct that the <code>player</code> account has signed the transaction, but we do not check that it is the <code>player</code> we expect. That's what the <code>require</code> check in <code>play</code> is for.</p>
+<h3 id="testing-the-play-instruction"><a class="header" href="#testing-the-play-instruction">Testing the Play Instruction</a></h3>
+<p>Testing the <code>play</code> instruction works the exact same way. To avoid repeating yourself, create a helper function at the top of the test file:</p>
+<pre><code class="language-typescript">async function play(program, game, player,
+    tile, expectedTurn, expectedGameState, expectedBoard) {
+  await program.rpc.play(tile, {
+    accounts: {
+      player: player.publicKey,
+      game
+    },
+    signers: player instanceof (anchor.Wallet as any) ? [] : [player]
+  });
+
+  const gameState = await program.account.game.fetch(game);
+  expect(gameState.turn).to.equal(expectedTurn);
+  expect(gameState.state).to.eql(expectedGameState);
+  expect(gameState.board)
+    .to
+    .eql(expectedBoard);
+}
+</code></pre>
+<p>You can create then a new <code>it</code> test, setup the game like in the previous test, but then keep calling the <code>play</code> function you just added to simulate a complete run of the game. Let's begin with the first turn:</p>
+<pre><code class="language-typescript">it('player one wins', async() =&gt; {
+    const gameKeypair = anchor.web3.Keypair.generate();
+    const playerOne = program.provider.wallet;
+    const playerTwo = anchor.web3.Keypair.generate();
+    await program.rpc.setupGame(playerTwo.publicKey, {
+      accounts: {
+        game: gameKeypair.publicKey,
+        playerOne: playerOne.publicKey,
+        systemProgram: anchor.web3.SystemProgram.programId
+      },
+      signers: [gameKeypair]
+    });
+
+    let gameState = await program.account.game.fetch(gameKeypair.publicKey);
+    expect(gameState.turn).to.equal(1);
+    expect(gameState.players)
+      .to
+      .eql([playerOne.publicKey, playerTwo.publicKey]);
+    expect(gameState.state).to.eql({ active: {} });
+    expect(gameState.board)
+      .to
+      .eql([[null,null,null],[null,null,null],[null,null,null]]);
+
+    await play(
+      program,
+      gameKeypair.publicKey,
+      playerOne,
+      {row: 0, column: 0},
+      2,
+      { active: {}, },
+      [
+        [{x:{}},null,null],
+        [null,null,null],
+        [null,null,null]
+      ]
+    );
+});
+</code></pre>
+<p>Now run <code>anchor test</code> again and you will be greeted with an error:</p>
+<pre><code>Error: 3004: Failed to serialize the account
+</code></pre>
+<p>What to do? We know that it happens during play, because our <code>setupGame</code> test runs fine.
+Also, it says <code>serialize</code>, not <code>deserialize</code>. So after our logic runs and anchor tries to save all the data, there is an error.
+What this means most of the time is that the account is too small to hold all its data and this is also the problem here.</p>
+<p>Let's have a look at the <code>Game</code> struct again and the way we created it:</p>
+<pre><code class="language-rust ignore">#[account]
+#[derive(Default)]
+pub struct Game {
+    players: [Pubkey; 2],          // 64
+    turn: u8,                      // 1
+    board: [[Option&lt;Sign&gt;; 3]; 3], // 9 * (1 + 1) = 18
+    state: GameState,              // 32 + 1
+}
+
+...
+#[account(init, payer = player_one)]
+pub game: Account&lt;'info, Game&gt;,
+...
+
+</code></pre>
+<p>Remember that we implemented <code>Default</code> for <code>Game</code> because <code>init</code> can try to infer the correct space requirements based on <code>Default</code>, &quot;try&quot; being the operative word. What happens if we don't specify an explicit <code>space</code> requirement for the account is that anchor will call <code>default</code> on the account and convert it to a vector using borsh. It then uses the length of that vector as the space for the account.
+Let's walk through our example step by step using the <a href="https://borsh.io/">borsh specification</a>. The comments show us the space requirements that we must get, that is, the largest the given type can become.</p>
+<ul>
+<li>Pubkey as a vector has a length of <code>32</code> so <code>2*32 = 64</code> ✅</li>
+<li>u8 as a vector has a length of <code>1</code> so <code>1 = 1</code> ✅</li>
+<li>board's default (<code>9 * None</code>) as a vector has a length of <code>9 != 18</code> ❌</li>
+<li>state's default as a vector is <code>1 != 33</code> ❌</li>
+</ul>
+<p>We have found out that <code>init</code> currently only allocates 75 bytes for our account data but the account can grow to (64 + 1 + 18 + 33) = 116 bytes.
+We can add this number to our Game impl like this:</p>
+<pre><code class="language-rust ignore">impl Game {
+    const MAXIMUM_SIZE: usize = 116;
+
+    ... // other functions
+}
+</code></pre>
+<pre><code class="language-rust ignore">...
+#[account(init, payer = player_one, space = Game::MAXIMUM_SIZE + 8)]
+pub game: Account&lt;'info, Game&gt;,
+...
+</code></pre>
+<p>In addition to the game's size, we have to add another <code>8</code> to the space. This is space for the <code>discriminator</code> which anchor sets automatically. In short, the discriminator is how anchor can differentiate between different accounts of the same program.</p>
+<blockquote>
+<p>(What about using <code>mem::size_of&lt;Game&gt;()</code>? This almost works but not quite. The issue is that borsh will always serialize an option as 1 byte for the variant identifier and then additional x bytes for the content if it's Some. Rust uses null-pointer optimization to make Option's variant identifier 0 bytes when it can, so an option is sometimes just as big as its contents. This is the case with <code>Sign</code>. This means the <code>MAXIMUM_SIZE</code> could be expressed as <code>mem::size_of&lt;Game&gt;() + 9</code>.)</p>
+</blockquote>
+<p>Running <code>anchor test</code> should work now. You can finish writing the test by yourself. Try to simulate a win and a tie!</p>
+<p>Proper testing also includes tests that try to exploit the contract. You can check whether you've protected yourself properly by calling <code>play</code> with unexpected parameters. For example:</p>
+<pre><code class="language-typescript">try {
+  await play(
+    program,
+    gameKeypair.publicKey,
+    playerTwo,
+    {row: 5, column: 1}, // out of bounds row
+    4,
+    { active: {}, },
+    [
+      [{x:{}},{x: {}},null],
+      [{o:{}},null,null],
+      [null,null,null]
+    ]
+  );
+  // we use this to make sure we definitely throw an error
+  chai.assert(false, &quot;should've failed but didn't &quot;);
+} catch (error) {
+  expect(error.code).to.equal(6000);
+}
+</code></pre>
+<h2 id="deployment"><a class="header" href="#deployment">Deployment</a></h2>
+<p>Solana has three main clusters: <code>mainnet-beta</code>, <code>devnet</code>, and <code>testnet</code>.
+For developers, <code>devnet</code> and <code>mainnet-beta</code> are the most interesting. <code>devnet</code> is where you test your application in a more realistic environment than <code>localnet</code>. <code>testnet</code> is mostly for validators.</p>
+<p>We are going to deploy on <code>devnet</code>.</p>
+<p>Here is your deployment checklist 🚀</p>
+<ol>
+<li>Run <code>anchor build</code>. Your program keypair is now in <code>target/deploy</code>. Keep this keypair secret. You can reuse it on all clusters.</li>
+<li>Run <code>anchor keys list</code> to display the keypair's public key and copy it into your <code>declare_id!</code> macro at the top of <code>lib.rs</code>.</li>
+<li>Run <code>anchor build</code> again. This step is necessary to include the new program id in the binary.</li>
+<li>Change the <code>provider.cluster</code> variable in <code>Anchor.toml</code> to <code>devnet</code>.</li>
+<li>Run <code>anchor deploy</code></li>
+<li>Run <code>anchor test</code></li>
+</ol>
+<p>There is more to deployments than this e.g. understanding how the BPFLoader works, how to manage keys, how to upgrade your programs and more. Keep reading to learn more!</p>
+<h2 id="program-directory-organization"><a class="header" href="#program-directory-organization">Program directory organization</a></h2>
+<blockquote>
+<p><a href="https://github.com/project-serum/anchor-book/tree/master/programs/tic-tac-toe">Program Code</a></p>
+</blockquote>
+<p>Eventually, some programs become too big to keep them in a single file and it makes sense to break them up. </p>
+<p>Splitting a program into multiple files works almost the exact same way as splitting up a regular rust program, so if you haven't already, now is the time to read all about that in the <a href="https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html">rust book</a>.</p>
+<p>We recommend the following directory structure (using the tic-tac-toe program as an example):</p>
+<pre><code>.
++-- lib.rs
++-- errors.rs
++-- instructions
+|   +-- play.rs
+|   +-- setup_game.rs
+|   +-- mod.rs
++-- state
+|   +-- game.rs
+|   +-- mod.rs
+</code></pre>
+<p>The crucial difference to a normal rust layout is the way that instructions have to be imported. The <code>lib.rs</code> file has to import each instruction module with a wildcard import (e.g. <code>use instructions::play::*;</code>). This has to be done because the <code>#[program]</code> macro depends on generated code inside each instruction file.</p>
+<p>To make the imports shorter you can re-export the instruction modules in the <code>mod.rs</code> file in the instructions directory with the <code>pub use</code> syntax and then import all instructions in the <code>lib.rs</code> file with <code>use instructions::*;</code>.</p>
+<p>Well done! You've finished the essentials section. You can now move on to the more advanced parts of Anchor.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="intermediate"><a class="header" href="#intermediate">Intermediate</a></h1>
+<p>This chapter teaches you intermediate anchor concepts like PDAs and Cross-Program Invocations.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cross-program-invocations"><a class="header" href="#cross-program-invocations">Cross-Program Invocations</a></h1>
+<p>Often it's useful for programs to interact with each other. In Solana this is achieved via Cross-Program Invocations (CPIs).</p>
+<p>Consider the following example of a puppet and a puppet master. Admittedly, it is not very realistic but it allows us to show you the many nuances of CPIs. The milestone project of the intermediate section covers a more realistic program with multiple CPIs.</p>
+<h2 id="setting-up-basic-cpi-functionality"><a class="header" href="#setting-up-basic-cpi-functionality">Setting up basic CPI functionality</a></h2>
+<p>Create a new workspace</p>
+<pre><code>anchor init puppet
+</code></pre>
+<p>and copy the following code.</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+
+declare_id!(&quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&quot;);
+
+#[program]
+pub mod puppet {
+    use super::*;
+    pub fn initialize(_ctx: Context&lt;Initialize&gt;) -&gt; Result&lt;()&gt; {
+        Ok(())
+    }
+
+    pub fn set_data(ctx: Context&lt;SetData&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        let puppet = &amp;mut ctx.accounts.puppet;
+        puppet.data = data;
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct Initialize&lt;'info&gt; {
+    #[account(init, payer = user, space = 8 + 8)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    #[account(mut)]
+    pub user: Signer&lt;'info&gt;,
+    pub system_program: Program&lt;'info, System&gt;,
+}
+
+#[derive(Accounts)]
+pub struct SetData&lt;'info&gt; {
+    #[account(mut)]
+    pub puppet: Account&lt;'info, Data&gt;,
+}
+
+#[account]
+pub struct Data {
+    pub data: u64,
+}
+</code></pre>
+<p>There's nothing special happening here. It's a pretty simple program! The interesting part is how it interacts with the next program we are going to create.</p>
+<p>Run</p>
+<pre><code>anchor new puppet-master
+</code></pre>
+<p>inside the workspace and copy the following code:</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+use puppet::cpi::accounts::SetData;
+use puppet::program::Puppet;
+use puppet::{self, Data};
+
+declare_id!(&quot;HmbTLCmaGvZhKnn1Zfa1JVnp7vkMV4DYVxPLWBVoN65L&quot;);
+
+#[program]
+mod puppet_master {
+    use super::*;
+    pub fn pull_strings(ctx: Context&lt;PullStrings&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        let cpi_program = ctx.accounts.puppet_program.to_account_info();
+        let cpi_accounts = SetData {
+            puppet: ctx.accounts.puppet.to_account_info(),
+        };
+        let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts);
+        puppet::cpi::set_data(cpi_ctx, data)
+    }
+}
+
+#[derive(Accounts)]
+pub struct PullStrings&lt;'info&gt; {
+    #[account(mut)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    pub puppet_program: Program&lt;'info, Puppet&gt;,
+}
+</code></pre>
+<p>Also add the line <code>puppet_master = &quot;HmbTLCmaGvZhKnn1Zfa1JVnp7vkMV4DYVxPLWBVoN65L&quot;</code> in the <code>[programs.localnet]</code> section of your <code>Anchor.toml</code>. Finally, import the puppet program into the puppet-master program by adding the following line to the <code>[dependencies]</code> section of the <code>Cargo.toml</code> file inside the <code>puppet-master</code> program folder:</p>
+<pre><code class="language-toml">puppet = { path = &quot;../puppet&quot;, features = [&quot;cpi&quot;]}
+</code></pre>
+<p>The <code>features = [&quot;cpi&quot;]</code> is used so we can not only use puppet's types but also its instruction builders and cpi functions. Without those, we would have to use low level solana syscalls. Fortunately, anchor provides abstractions on top of those. By enabling the <code>cpi</code> feature, the puppet-master program gets access to the <code>puppet::cpi</code> module. Anchor generates this module automatically and it contains tailor-made instructions builders and cpi helpers for the program.</p>
+<p>In the case of the puppet program, the puppet-master uses the <code>SetData</code> instruction builder struct provided by the <code>puppet::cpi::accounts</code> module to submit the accounts the <code>SetData</code> instruction of the puppet program expects. Then, the puppet-master creates a new cpi context and passes it to the <code>puppet::cpi::set_data</code> cpi function. This function has the exact same function as the <code>set_data</code> function in the puppet program with the exception that it expects a <code>CpiContext</code> instead of a <code>Context</code>.</p>
+<p>Setting up a CPI can distract from the business logic of the program so it's recommended to move the CPI setup into the <code>impl</code> block of the instruction. The puppet-master program then looks like this:</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+use puppet::cpi::accounts::SetData;
+use puppet::program::Puppet;
+use puppet::{self, Data};
+
+declare_id!(&quot;HmbTLCmaGvZhKnn1Zfa1JVnp7vkMV4DYVxPLWBVoN65L&quot;);
+
+#[program]
+mod puppet_master {
+    use super::*;
+    pub fn pull_strings(ctx: Context&lt;PullStrings&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        puppet::cpi::set_data(ctx.accounts.set_data_ctx(), data)
+    }
+}
+
+#[derive(Accounts)]
+pub struct PullStrings&lt;'info&gt; {
+    #[account(mut)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    pub puppet_program: Program&lt;'info, Puppet&gt;,
+}
+
+impl&lt;'info&gt; PullStrings&lt;'info&gt; {
+    pub fn set_data_ctx(&amp;self) -&gt; CpiContext&lt;'_, '_, '_, 'info, SetData&lt;'info&gt;&gt; {
+        let cpi_program = self.puppet_program.to_account_info();
+        let cpi_accounts = SetData {
+            puppet: self.puppet.to_account_info()
+        };
+        CpiContext::new(cpi_program, cpi_accounts)
+    }
+}
+</code></pre>
+<p>We can verify that everything works as expected by replacing the contents of the <code>puppet.ts</code> file with:</p>
+<pre><code class="language-ts">import * as anchor from '@project-serum/anchor';
+import { Program } from '@project-serum/anchor';
+import { Keypair, SystemProgram } from '@solana/web3.js';
+import { expect } from 'chai';
+import { Puppet } from '../target/types/puppet';
+import { PuppetMaster } from '../target/types/puppet_master';
+
+describe('puppet', () =&gt; {
+  anchor.setProvider(anchor.Provider.env());
+
+  const puppetProgram = anchor.workspace.Puppet as Program&lt;Puppet&gt;;
+  const puppetMasterProgram = anchor.workspace.PuppetMaster as Program&lt;PuppetMaster&gt;;
+
+  const puppetKeypair = Keypair.generate();
+
+  it('Does CPI!', async () =&gt; {
+    await puppetProgram.rpc.initialize({
+      accounts: {
+        puppet: puppetKeypair.publicKey,
+        user: anchor.getProvider().wallet.publicKey,
+        systemProgram: SystemProgram.programId
+      },
+      signers: [puppetKeypair]
+    });
+
+    await puppetMasterProgram.rpc.pullStrings(new anchor.BN(42),{
+      accounts: {
+        puppetProgram: puppetProgram.programId,
+        puppet: puppetKeypair.publicKey
+      }
+    })
+
+    expect((await puppetProgram.account.data
+      .fetch(puppetKeypair.publicKey)).data.toNumber()).to.equal(42);
+  });
+});
+</code></pre>
+<p>and running <code>anchor test</code>.</p>
+<h2 id="privilege-extension"><a class="header" href="#privilege-extension">Privilege Extension</a></h2>
+<p>CPIs extend the privileges of the caller to the callee. The puppet account was passed as a mutable account to the puppet-master but it was still mutable in the puppet program as well (otherwise the <code>expect</code> in the test would've failed). The same applies to signatures.</p>
+<p>If you want to prove this for yourself, add an <code>authority</code> field to the <code>Data</code> struct in the puppet program.</p>
+<pre><code class="language-rust ignore">#[account]
+pub struct Data {
+    pub data: u64,
+    pub authority: Pubkey
+}
+</code></pre>
+<p>and adjust the <code>initialize</code> function:</p>
+<pre><code class="language-rust ignore">pub fn initialize(ctx: Context&lt;Initialize&gt;, authority: Pubkey) -&gt; Result&lt;()&gt; {
+    ctx.accounts.puppet.authority = authority;
+    Ok(())
+}
+</code></pre>
+<p>Add <code>32</code> to the <code>space</code> constraint of the <code>puppet</code> field for the <code>Pubkey</code> field in the <code>Data</code> struct.</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct Initialize&lt;'info&gt; {
+    #[account(init, payer = user, space = 8 + 8 + 32)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    #[account(mut)]
+    pub user: Signer&lt;'info&gt;,
+    pub system_program: Program&lt;'info, System&gt;,
+}
+</code></pre>
+<p>Then, adjust the <code>SetData</code> validation struct:</p>
+<pre><code class="language-rust ignore">#[derive(Accounts)]
+pub struct SetData&lt;'info&gt; {
+    #[account(mut, has_one = authority)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    pub authority: Signer&lt;'info&gt;
+}
+</code></pre>
+<p>The <code>has_one</code> constraint checks that <code>puppet.authority = authority.key()</code>.</p>
+<p>The puppet-master program now also needs adjusting:</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+use puppet::cpi::accounts::SetData;
+use puppet::program::Puppet;
+use puppet::{self, Data};
+
+declare_id!(&quot;HmbTLCmaGvZhKnn1Zfa1JVnp7vkMV4DYVxPLWBVoN65L&quot;);
+
+#[program]
+mod puppet_master {
+    use super::*;
+    pub fn pull_strings(ctx: Context&lt;PullStrings&gt;, data: u64) -&gt; Result&lt;()&gt; {
+        puppet::cpi::set_data(ctx.accounts.set_data_ctx(), data)
+    }
+}
+
+#[derive(Accounts)]
+pub struct PullStrings&lt;'info&gt; {
+    #[account(mut)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    pub puppet_program: Program&lt;'info, Puppet&gt;,
+    // Even though the puppet program already checks that authority is a signer
+    // using the Signer type here is still required because the anchor ts client
+    // can not infer signers from programs called via CPIs
+    pub authority: Signer&lt;'info&gt;
+}
+
+impl&lt;'info&gt; PullStrings&lt;'info&gt; {
+    pub fn set_data_ctx(&amp;self) -&gt; CpiContext&lt;'_, '_, '_, 'info, SetData&lt;'info&gt;&gt; {
+        let cpi_program = self.puppet_program.to_account_info();
+        let cpi_accounts = SetData {
+            puppet: self.puppet.to_account_info(),
+            authority: self.authority.to_account_info()
+        };
+        CpiContext::new(cpi_program, cpi_accounts)
+    }
+}
+</code></pre>
+<p>Finally, change the test:</p>
+<pre><code class="language-ts">import * as anchor from '@project-serum/anchor';
+import { Program } from '@project-serum/anchor';
+import { Keypair, SystemProgram } from '@solana/web3.js';
+import { Puppet } from '../target/types/puppet';
+import { PuppetMaster } from '../target/types/puppet_master';
+import { expect } from 'chai';
+
+describe('puppet', () =&gt; {
+  anchor.setProvider(anchor.Provider.env());
+
+  const puppetProgram = anchor.workspace.Puppet as Program&lt;Puppet&gt;;
+  const puppetMasterProgram = anchor.workspace.PuppetMaster as Program&lt;PuppetMaster&gt;;
+
+  const puppetKeypair = Keypair.generate();
+  const authorityKeypair = Keypair.generate();
+
+  it('Does CPI!', async () =&gt; {
+    await puppetProgram.rpc.initialize(authorityKeypair.publicKey, {
+      accounts: {
+        puppet: puppetKeypair.publicKey,
+        user: anchor.getProvider().wallet.publicKey,
+        systemProgram: SystemProgram.programId,
+      },
+      signers: [puppetKeypair]
+    });
+
+    await puppetMasterProgram.rpc.pullStrings(new anchor.BN(42),{
+      accounts: {
+        puppetProgram: puppetProgram.programId,
+        puppet: puppetKeypair.publicKey,
+        authority: authorityKeypair.publicKey
+      },
+      signers: [authorityKeypair]
+    })
+
+    expect((await puppetProgram.account.data
+      .fetch(puppetKeypair.publicKey)).data.toNumber()).to.equal(42);
+  });
+});
+</code></pre>
+<p>The test passes because the signature that was given to the puppet-master by the authority was then extended to the puppet program which used it to check that the authority for the puppet account had signed the transaction.</p>
+<blockquote>
+<p>Privilege extension is convenient but also dangerous. If a CPI is unintentionally made to a malicious program,
+this program has the same privileges as the caller.
+Anchor protects you from CPIs to malicious programs with two measures.
+First, the <code>Program&lt;'info, T&gt;</code> type checks that the given account is the expected program <code>T</code>.
+Should you ever forget to use the <code>Program</code> type, the automatically generated cpi function
+(in the previous example this was <code>puppet::cpi::set_data</code>)
+also checks that the <code>cpi_program</code> argument equals the expected program.</p>
+</blockquote>
+<h2 id="reloading-an-account"><a class="header" href="#reloading-an-account">Reloading an Account</a></h2>
+<p>In the puppet program, the <code>Account&lt;'info, T&gt;</code> type is used for the <code>puppet</code> account. If a CPI edits an account of that type,
+the caller's account does not change during the instruction.</p>
+<p>You can easily see this for yourself by adding the following right after the <code>puppet::cpi::set_data(ctx.accounts.set_data_ctx(), data)</code> cpi call.</p>
+<pre><code class="language-rust ignore">puppet::cpi::set_data(ctx.accounts.set_data_ctx(), data)?;
+if ctx.accounts.puppet.data != 42 {
+    panic!();
+}
+Ok(())
+</code></pre>
+<p>Now your test will fail. But why? After all the test used to pass, so the cpi definitely did change the <code>data</code> field to <code>42</code>.</p>
+<p>The reason the <code>data</code> field has not been updated to <code>42</code> in the caller is that at the beginning of the instruction the <code>Account&lt;'info, T&gt;</code> type deserializes the incoming bytes into a new struct. This struct is no longer connected to the underlying data in the account. The CPI changes the data in the underlying account but since the struct in the caller has no connection to the underlying account the struct in the caller remains unchanged.</p>
+<p>If you need to read the value of an account that has just been changed by a CPI, you can call its <code>reload</code> method which will re-deserialize the account. If you put <code>ctx.accounts.puppet.reload()?;</code> right after the cpi call, the test will pass again.</p>
+<pre><code class="language-rust ignore">puppet::cpi::set_data(ctx.accounts.set_data_ctx(), data)?;
+ctx.accounts.puppet.reload()?;
+if ctx.accounts.puppet.data != 42 {
+    panic!();
+}
+Ok(())
+</code></pre>
+<h2 id="returning-values-from-a-cpi"><a class="header" href="#returning-values-from-a-cpi">Returning values from a CPI</a></h2>
+<p>Since 1.8.12, the <code>set_return_data</code> and <code>get_return_data</code> syscalls can be used to set and get return data from CPIs. While these can already be used in anchor programs, anchor does not yet provide abstractions on top of them.</p>
+<p>The return data can only be max 1024 bytes with these syscalls so it's worth briefly explaining the old workaround for CPI return values which is still relevant for return values bigger than 1024 bytes.</p>
+<p>By using a CPI together with <code>reload</code> it's possible to simulate return values. One could imagine that instead of just setting the <code>data</code> field to <code>42</code> the puppet program did some calculation with the <code>42</code> and saved the result in <code>data</code>. The puppet-master can then call <code>reload</code> after the cpi and use the result of the puppet program's calculation.</p>
+<h2 id="programs-as-signers"><a class="header" href="#programs-as-signers">Programs as Signers</a></h2>
+<p>There's one more thing that can be done with CPIs. But for that, you need to first learn what PDAs are. We'll cover those in the next chapter.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pdas"><a class="header" href="#pdas">PDAs</a></h1>
+<p>Knowing how to use PDAs is one of the most important skills for Solana Programming.
+They simplify the programming model and make programs more secure. So what are they?</p>
+<p>PDAs (program derived addresses) are addresses with special properties.</p>
+<p>Unlike normal addresses, PDAs are not public keys and therefore do not have an associated private key. There are two use cases for PDAs. They provide a mechanism to build hashmap-like structures on-chain and they allow programs to sign instructions.</p>
+<h2 id="creation-of-a-pda"><a class="header" href="#creation-of-a-pda">Creation of a PDA</a></h2>
+<p>Before we dive into how to use PDAs in anchor, here's a short explainer on what PDAs are.</p>
+<p>PDAs are created by hashing a number of seeds the user can choose and the id of a program:</p>
+<pre><code class="language-rust ignore">// pseudo code
+let pda = hash(seeds, program_id);
+</code></pre>
+<p>The seeds can be anything. A pubkey, a string, an array of numbers etc.</p>
+<p>There's a 50% chance that this hash function results in a public key (but PDAs are not public keys), so a bump has to be searched for so that we get a PDA:</p>
+<pre><code class="language-rust ignore">// pseudo code
+fn find_pda(seeds, program_id) {
+  for bump in 0..256 {
+    let potential_pda = hash(seeds, bump, program_id);
+    if is_pubkey(potential_pda) {
+      continue;
+    }
+    return (potential_pda, bump);
+  }
+  panic!(&quot;Could not find pda after 256 tries.&quot;);
+}
+</code></pre>
+<p>It is technically possible that no bump is found within 256 tries but this probability is negligible.
+If you're interested in the exact calculation of a PDA, check out the <a href="https://docs.rs/solana-program/latest/solana_program/pubkey/struct.Pubkey.html#method.find_program_address"><code>solana_program</code> source code</a>.</p>
+<p>The first bump that results in a PDA is commonly called the &quot;canonical bump&quot;. Other bumps may also result in a PDA but it's recommended to only use the canonical bump to avoid confusion.</p>
+<h2 id="using-pdas"><a class="header" href="#using-pdas">Using PDAs</a></h2>
+<p>We are now going to show you what you can do with PDAs and how to do it in Anchor!</p>
+<h3 id="hashmap-like-structures-using-pdas"><a class="header" href="#hashmap-like-structures-using-pdas">Hashmap-like structures using PDAs</a></h3>
+<p>Before we dive into the specifics of creating hashmaps in anchor, let's look at how to create a hashmap with PDAs in general.</p>
+<h4 id="building-hashmaps-with-pdas"><a class="header" href="#building-hashmaps-with-pdas">Building hashmaps with PDAs</a></h4>
+<p>PDAs are hashed from the bump, a program id, but also a number of seeds which can be freely chosen by the user.
+These seeds can be used to build hashmap-like structures on-chain.</p>
+<p>For instance, imagine you're building an in-browser game and want to store some user stats. Maybe their level and their in-game name. You could create an account with a layout that looks like this:</p>
+<pre><code class="language-rust ignore">pub struct UserStats {
+  level: u16,
+  name: String,
+  authority: Pubkey
+}
+</code></pre>
+<p>The <code>authority</code> would be the user the accounts belongs to.</p>
+<p>This approach creates the following problem. It's easy to go from the user stats account to the user account address (just read the <code>authority</code> field) but if you just have the user account address (which is more likely), how do you find the user stats account? You can't. This is a problem because your game probably has instructions that require both the user stats account and its authority which means the client needs to pass those accounts into the instruction (for example, a <code>ChangeName</code> instruction). So maybe the frontend could store a mapping between a user's account address and a user's info address in local storage. This works until the user accidentally wipes their local storage.</p>
+<p>With PDAs you can have a layout like this:</p>
+<pre><code class="language-rust ignore">pub struct UserStats {
+  level: u16,
+  name: String,
+  bump: u8
+}
+</code></pre>
+<p>and encode the information about the relationship between the user and the user stats account in the address of the user stats account itself.</p>
+<p>Reusing the pseudo code from above:</p>
+<pre><code class="language-rust ignore">// pseudo code
+let seeds = [b&quot;user-stats&quot;, authority];
+let (pda, bump) = find_pda(seeds, game_program_id);
+</code></pre>
+<p>When a user connects to your website, this pda calculation can be done client-side using their user account address as the <code>authority</code>. The  resulting pda then serves as the address of the user's stats account. The <code>b&quot;user-stats&quot;</code> is added in case there are other account types that are also PDAs. If there were an inventory account, it could be inferred using these seeds:</p>
+<pre><code class="language-rust ignore">let seeds = [b&quot;inventory&quot;, authority];
+</code></pre>
+<p>To summarize, we have used PDAs to create a mapping between a user and their user stats account. There is no single hashmap object that exposes a <code>get</code> function. Instead, each value (the user stats address) can be found by using certain seeds (&quot;user-stats&quot; and the user account address) as inputs to the <code>find_pda</code> function.</p>
+<h4 id="how-to-build-pda-hashmaps-in-anchor"><a class="header" href="#how-to-build-pda-hashmaps-in-anchor">How to build PDA hashmaps in Anchor</a></h4>
+<p>Continuing with the example from the previous sections, create a new workspace</p>
+<pre><code>anchor init game
+</code></pre>
+<p>and copy the following code</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+
+declare_id!(&quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&quot;);
+
+#[program]
+pub mod game {
+    use super::*;
+    // handler function
+    pub fn create_user_stats(ctx: Context&lt;CreateUserStats&gt;, name: String) -&gt; Result&lt;()&gt; {
+        let user_stats = &amp;mut ctx.accounts.user_stats;
+        user_stats.level = 0;
+        if name.as_bytes().len() &gt; 200 {
+            // proper error handling omitted for brevity
+            panic!();
+        }
+        user_stats.name = name;
+        user_stats.bump = *ctx.bumps.get(&quot;user_stats&quot;).unwrap();
+        Ok(())
+    }
+}
+
+#[account]
+pub struct UserStats {
+    level: u16,
+    name: String,
+    bump: u8,
+}
+
+// validation struct
+#[derive(Accounts)]
+pub struct CreateUserStats&lt;'info&gt; {
+    #[account(mut)]
+    pub user: Signer&lt;'info&gt;,
+    // space: 8 discriminator + 2 level + 4 name length + 200 name + 1 bump
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 2 + 4 + 200 + 1, seeds = [b&quot;user-stats&quot;, user.key().as_ref()], bump
+    )]
+    pub user_stats: Account&lt;'info, UserStats&gt;,
+    pub system_program: Program&lt;'info, System&gt;,
+}
+</code></pre>
+<p>In the account validation struct we use <code>seeds</code> together with <code>init</code> to create a PDA with the desired seeds.
+Additionally, we add an empty <code>bump</code> constraint to signal to anchor that it should find the canonical bump itself.
+Then, in the handler, we call <code>ctx.bumps.get(&quot;user_stats&quot;)</code> to get the bump anchor found and save it to the user stats
+account as an extra property.</p>
+<p>If we then want to use the created pda in a different instruction, we can add a new validation struct (This will check that the <code>user_stats</code> account is the pda created by running <code>hash(seeds, user_stats.bump, game_program_id)</code>):</p>
+<pre><code class="language-rust ignore">// validation struct
+#[derive(Accounts)]
+pub struct ChangeUserName&lt;'info&gt; {
+    pub user: Signer&lt;'info&gt;,
+    #[account(mut, seeds = [b&quot;user-stats&quot;, user.key().as_ref()], bump = user_stats.bump)]
+    pub user_stats: Account&lt;'info, UserStats&gt;,
+}
+</code></pre>
+<p>and another handler function:</p>
+<pre><code class="language-rust ignore">// handler function (add this next to the create_user_stats function in the game module)
+pub fn change_user_name(ctx: Context&lt;ChangeUserName&gt;, new_name: String) -&gt; Result&lt;()&gt; {
+    if new_name.as_bytes().len() &gt; 200 {
+        // proper error handling omitted for brevity
+        panic!();
+    }
+    ctx.accounts.user_stats.name = new_name;
+    Ok(())
+}
+</code></pre>
+<p>Finally, let's add a test. Copy this into <code>game.ts</code></p>
+<pre><code class="language-ts">import * as anchor from '@project-serum/anchor';
+import { Program } from '@project-serum/anchor';
+import { PublicKey, SystemProgram } from '@solana/web3.js';
+import { Game } from '../target/types/game';
+import { expect } from 'chai';
+
+describe('game', async() =&gt; {
+
+anchor.setProvider(anchor.Provider.env());
+
+  const program = anchor.workspace.Game as Program&lt;Game&gt;;
+
+  it('Sets and changes name!', async () =&gt; {
+    const [userStatsPDA, _] = await PublicKey
+      .findProgramAddress(
+        [
+          anchor.utils.bytes.utf8.encode(&quot;user-stats&quot;),
+          anchor.getProvider().wallet.publicKey.toBuffer()
+        ],
+        program.programId
+      );
+
+    await program.rpc.createUserStats(&quot;brian&quot;, {
+      accounts: {
+        user: anchor.getProvider().wallet.publicKey,
+        userStats: userStatsPDA,
+        systemProgram: SystemProgram.programId
+      }
+    });
+
+    expect((await program.account.userStats.fetch(userStatsPDA)).name).to.equal(&quot;brian&quot;);
+
+    await program.rpc.changeUserName(&quot;tom&quot;, {
+      accounts: {
+        user: anchor.getProvider().wallet.publicKey,
+        userStats: userStatsPDA
+      }
+    })
+
+    expect((await program.account.userStats.fetch(userStatsPDA)).name).to.equal(&quot;tom&quot;);
+  });
+});
+</code></pre>
+<p>Exactly as described in the subchapter before this one, we use a <code>find</code> function to find the PDA. We can then use it just like a normal address. Well, almost. When we call <code>createUserStats</code>, we don't have to add the PDA to the <code>[signers]</code> array even though account creation requires a signature. This is because it is impossible to sign the transaction from outside the program as the PDA (it's not a public key so there is no private key to sign with). Instead, the signature is added when the CPI to the system program is made. We're going to explain how this works in the <a href="chapter_3/PDAs.html#programs-as-signers">Programs as Signers</a> section.</p>
+<h4 id="enforcing-uniqueness"><a class="header" href="#enforcing-uniqueness">Enforcing uniqueness</a></h4>
+<p>A subtle result of this hashmap structure is enforced uniqueness. When <code>init</code> is used with <code>seeds</code> and <code>bump</code>, it will always search for the canonical bump. This means that it can only be called once (because the 2nd time it's called the PDA will already be initialized). To illustrate how powerful enforced uniqueness is, consider a decentralized exchange program. In this program, anyone can create a new market for two assets. However, the program creators want liquidity to be concentrated so there should only be one market for every combination of two assets. This could be done without PDAs but would require a global account that saves all the different markets. Then upon market creation, the program would check whether the asset combination exists in the global market list. With PDAs this can be done in a much more straightforward way. Any market would simply be the PDA of the mint addresses of the two assets. The program would then check whether either of the two possible PDAs (because the market could've been created with the assets in reverse order) already exists.</p>
+<h3 id="programs-as-signers-1"><a class="header" href="#programs-as-signers-1">Programs as Signers</a></h3>
+<p>Creating PDAs requires them to sign the <code>createAccount</code> CPI of the system program. How does that work?</p>
+<p>PDAs are not public keys so it's impossible for them to sign anything. However, PDAs can still pseudo sign CPIs.
+In anchor, to sign with a pda you have to change <code>CpiContext::new(cpi_program, cpi_accounts)</code> to <code>CpiContext::new_with_signer(cpi_program, cpi_accounts, seeds)</code> where the <code>seeds</code> argument are the seeds <em>and</em> the bump the PDA was created with. 
+When the CPI is invoked, for each account in <code>cpi_accounts</code> the Solana runtime will check whether<code>hash(seeds, current_program_id) == account address</code> is true. If yes, that account's <code>is_signer</code> flag will be turned to true.
+This means a PDA derived from some program X, may only be used to sign CPIs that originate from that program X. This means that on a high level, PDA signatures can be considered program signatures.</p>
+<p>This is great news because for many programs it is necessary that the program itself takes the authority over some assets.
+For instance, lending protocol programs need to manage deposited collateral and automated market maker programs need to manage the tokens put into their liquidity pools.</p>
+<p>Let's revisit the puppet workspace and add a PDA signature.</p>
+<p>First, adjust the puppet-master code:</p>
+<pre><code class="language-rust ignore">use anchor_lang::prelude::*;
+use puppet::cpi::accounts::SetData;
+use puppet::program::Puppet;
+use puppet::{self, Data};
+
+declare_id!(&quot;HmbTLCmaGvZhKnn1Zfa1JVnp7vkMV4DYVxPLWBVoN65L&quot;);
+
+#[program]
+mod puppet_master {
+    use super::*;
+    pub fn pull_strings(ctx: Context&lt;PullStrings&gt;, bump: u8, data: u64) -&gt; Result&lt;()&gt; {
+        let bump = &amp;[bump][..];
+        puppet::cpi::set_data(
+            ctx.accounts.set_data_ctx().with_signer(&amp;[&amp;[bump][..]]),
+            data,
+        )
+    }
+}
+
+#[derive(Accounts)]
+pub struct PullStrings&lt;'info&gt; {
+    #[account(mut)]
+    pub puppet: Account&lt;'info, Data&gt;,
+    pub puppet_program: Program&lt;'info, Puppet&gt;,
+    /// CHECK: only used as a signing PDA
+    pub authority: UncheckedAccount&lt;'info&gt;,
+}
+
+impl&lt;'info&gt; PullStrings&lt;'info&gt; {
+    pub fn set_data_ctx(&amp;self) -&gt; CpiContext&lt;'_, '_, '_, 'info, SetData&lt;'info&gt;&gt; {
+        let cpi_program = self.puppet_program.to_account_info();
+        let cpi_accounts = SetData {
+            puppet: self.puppet.to_account_info(),
+            authority: self.authority.to_account_info(),
+        };
+        CpiContext::new(cpi_program, cpi_accounts)
+    }
+}
+</code></pre>
+<p>The <code>authority</code> account is now an <code>UncheckedAccount</code> instead of a <code>Signer</code>. When the puppet-master is invoked, the <code>authority</code> pda is not a signer yet so we mustn't add a check for it. We just care about the puppet-master being able to sign so we don't add any additional seeds. Just a bump that is calculated off-chain and then passed to the function.</p>
+<p>Finally, this is the new <code>puppet.ts</code>:</p>
+<pre><code class="language-ts">import * as anchor from '@project-serum/anchor';
+import { Program } from '@project-serum/anchor';
+import { Keypair, PublicKey, SystemProgram } from '@solana/web3.js';
+import { Puppet } from '../target/types/puppet';
+import { PuppetMaster } from '../target/types/puppet_master';
+import { expect } from 'chai';
+
+describe('puppet', () =&gt; {
+  anchor.setProvider(anchor.Provider.env());
+
+  const puppetProgram = anchor.workspace.Puppet as Program&lt;Puppet&gt;;
+  const puppetMasterProgram = anchor.workspace.PuppetMaster as Program&lt;PuppetMaster&gt;;
+
+  const puppetKeypair = Keypair.generate();
+
+  it('Does CPI!', async () =&gt; {
+    const [puppetMasterPDA, puppetMasterBump] = await PublicKey
+      .findProgramAddress([], puppetMasterProgram.programId);
+
+    await puppetProgram.rpc.initialize(puppetMasterPDA, {
+      accounts: {
+        puppet: puppetKeypair.publicKey,
+        user: anchor.getProvider().wallet.publicKey,
+        systemProgram: SystemProgram.programId,
+      },
+      signers: [puppetKeypair]
+    });
+
+    await puppetMasterProgram.rpc.pullStrings(puppetMasterBump, new anchor.BN(42),{
+      accounts: {
+        puppetProgram: puppetProgram.programId,
+        puppet: puppetKeypair.publicKey,
+        authority: puppetMasterPDA
+      ,
+    }});
+
+    expect((await puppetProgram.account.data
+      .fetch(puppetKeypair.publicKey)).data.toNumber()).to.equal(42);
+  });
+});
+</code></pre>
+<p>The <code>authority</code> is no longer a randomly generated keypair but a PDA derived from the puppet-master program. This means the puppet-master can sign with it which it does inside <code>pullStrings</code>. It's worth noting that our implementation also allows non-canonical bumps but again because we are only interesting in being able to sign we don't care which bump is used.</p>
+<blockquote>
+<p>In some cases it's possible to reduce the number of accounts you need by making a PDA storing state also sign a CPI instead of defining a separate PDA to do that.</p>
+</blockquote>
+<h2 id="pdas-conclusion"><a class="header" href="#pdas-conclusion">PDAs: Conclusion</a></h2>
+<p>This section serves as a brief recap of the different things you can do with PDAs.</p>
+<p>First, you can create hashmaps with them. We created a user stats PDA which was derived from the user address. This derivation linked the user address and the user stats account, allowing the latter to be easily found given the former.
+Hashmaps also result in enforced uniqueness which can be used in many different ways, e.g. for only allowing one market per two assets in a decentralized exchange.</p>
+<p>Secondly, PDAs can be used to allow programs to sign CPIs. This means that programs can be given control over assets which they then manage according to the rules defined in their code.</p>
+<p>You can even combine these two use cases and use a PDA that's used in an instruction as a state account to also sign a CPI.</p>
+<p>Admittedly, working with PDAs is one of the most challenging parts of working with Solana.
+This is why in addition to our explanations here, we want to provide you with some further resources.</p>
+<ul>
+<li><a href="https://twitter.com/pencilflip/status/1455948263853600768?s=20&amp;t=J2JXCwv395D7MNkX7a9LGw">Pencilflips's twitter thread on PDAs</a></li>
+<li><a href="https://www.youtube.com/watch?v=iMWaQRyjpl4">jarry xiao's talk on PDAs and CPIs</a></li>
+<li><a href="https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction/">paulx's guide on everything Solana (covers much more than PDAs)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anchor-tooling"><a class="header" href="#anchor-tooling">Anchor Tooling</a></h1>
+<p>This chapter explores Anchor's tooling.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cli"><a class="header" href="#cli">CLI</a></h1>
+<p>A CLI is provided to support building and managing an Anchor workspace.
+For a comprehensive list of commands and options, run <code>anchor -h</code> on any
+of the following subcommands.</p>
+<pre><code>anchor-cli
+
+USAGE:
+    anchor &lt;SUBCOMMAND&gt;
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+SUBCOMMANDS:
+    build      Builds the workspace
+    cluster    Cluster commands
+    deploy     Deploys each program in the workspace
+    expand     Expands the macros of a program or the workspace
+    help       Prints this message or the help of the given subcommand(s)
+    idl        Commands for interacting with interface definitions
+    init       Initializes a workspace
+    migrate    Runs the deploy migration script
+    new        Creates a new program
+    test       Runs integration tests against a localnetwork
+    upgrade    Upgrades a single program. The configured wallet must be the upgrade authority
+    verify     Verifies the on-chain bytecode matches the locally compiled artifact. Run this
+               command inside a program subdirectory, i.e., in the dir containing the program's
+               Cargo.toml
+</code></pre>
+<h2 id="build"><a class="header" href="#build">Build</a></h2>
+<pre><code>anchor build
+</code></pre>
+<p>Builds programs in the workspace targeting Solana's BPF runtime and emitting IDLs in the <code>target/idl</code> directory.</p>
+<pre><code>anchor build --verifiable
+</code></pre>
+<p>Runs the build inside a docker image so that the output binary is deterministic (assuming a Cargo.lock file is used). This command must be run from within a single crate subdirectory within the workspace. For example, <code>programs/&lt;my-program&gt;/</code>.</p>
+<h2 id="cluster"><a class="header" href="#cluster">Cluster</a></h2>
+<h3 id="cluster-list"><a class="header" href="#cluster-list">Cluster list</a></h3>
+<pre><code>anchor cluster list
+</code></pre>
+<p>This lists cluster endpoints:</p>
+<pre><code>Cluster Endpoints:
+
+* Mainnet - https://solana-api.projectserum.com
+* Mainnet - https://api.mainnet-beta.solana.com
+* Devnet  - https://api.devnet.solana.com
+* Testnet - https://api.testnet.solana.com
+</code></pre>
+<h2 id="deploy"><a class="header" href="#deploy">Deploy</a></h2>
+<pre><code>anchor deploy
+</code></pre>
+<p>Deploys all programs in the workspace to the configured cluster.</p>
+<p>::: tip Note
+This is different from the <code>solana program deploy</code> command, because everytime it's run
+it will generate a <em>new</em> program address.
+:::</p>
+<h2 id="expand"><a class="header" href="#expand">Expand</a></h2>
+<pre><code>anchor expand
+</code></pre>
+<p>If run inside a program folder, expands the macros of the program.</p>
+<p>If run in the workspace but outside a program folder, expands the macros of the workspace.</p>
+<p>If run with the <code>--program-name</code> option, expand only the given program.</p>
+<h2 id="idl"><a class="header" href="#idl">Idl</a></h2>
+<p>The <code>idl</code> subcommand provides commands for interacting with interface definition files.
+It's recommended to use these commands to store an IDL on chain, at a deterministic
+address, as a function of nothing but the the program's ID. This
+allows us to generate clients for a program using nothing but the program ID.</p>
+<h3 id="idl-init"><a class="header" href="#idl-init">Idl Init</a></h3>
+<pre><code>anchor idl init -f &lt;target/idl/program.json&gt; &lt;program-id&gt;
+</code></pre>
+<p>Creates an idl account, writing the given <code>&lt;target/idl/program.json&gt;</code> file into a program owned account. By default, the size of the account is double the size of the IDL,
+allowing room for growth in case the idl needs to be upgraded in the future.</p>
+<h3 id="idl-fetch"><a class="header" href="#idl-fetch">Idl Fetch</a></h3>
+<pre><code>anchor idl fetch -o &lt;out-file.json&gt; &lt;program-id&gt;
+</code></pre>
+<p>Fetches an IDL from the configured blockchain. For example, make sure
+your <code>Anchor.toml</code> is pointing to the <code>mainnet</code> cluster and run</p>
+<pre><code>anchor idl fetch GrAkKfEpTKQuVHG2Y97Y2FF4i7y7Q5AHLK94JBy7Y5yv
+</code></pre>
+<h3 id="idl-authority"><a class="header" href="#idl-authority">Idl Authority</a></h3>
+<pre><code>anchor idl authority &lt;program-id&gt;
+</code></pre>
+<p>Outputs the IDL account's authority. This is the wallet that has the ability to
+update the IDL.</p>
+<h3 id="idl-erase-authority"><a class="header" href="#idl-erase-authority">Idl Erase Authority</a></h3>
+<pre><code>anchor idl erase-authority -p &lt;program-id&gt;
+</code></pre>
+<p>Erases the IDL account's authority so that upgrades can no longer occur. The
+configured wallet must be the current authority.</p>
+<h3 id="idl-upgrade"><a class="header" href="#idl-upgrade">Idl Upgrade</a></h3>
+<pre><code>anchor idl upgrade &lt;program-id&gt; -f &lt;target/idl/program.json&gt;
+</code></pre>
+<p>Upgrades the IDL file on chain to the new <code>target/idl/program.json</code> idl.
+The configured wallet must be the current authority.</p>
+<pre><code>anchor idl set-authority -n &lt;new-authority&gt; -p &lt;program-id&gt;
+</code></pre>
+<p>Sets a new authority on the IDL account. Both the <code>new-authority</code> and <code>program-id</code>
+must be encoded in base 58.</p>
+<h2 id="init"><a class="header" href="#init">Init</a></h2>
+<pre><code>anchor init
+</code></pre>
+<p>Initializes a project workspace with the following structure.</p>
+<ul>
+<li><code>Anchor.toml</code>: Anchor configuration file.</li>
+<li><code>Cargo.toml</code>: Rust workspace configuration file.</li>
+<li><code>package.json</code>: JavaScript dependencies file.</li>
+<li><code>programs/</code>: Directory for Solana program crates.</li>
+<li><code>app/</code>: Directory for your application frontend.</li>
+<li><code>tests/</code>: Directory for JavaScript integration tests.</li>
+<li><code>migrations/deploy.js</code>: Deploy script.</li>
+</ul>
+<h2 id="migrate"><a class="header" href="#migrate">Migrate</a></h2>
+<pre><code>anchor migrate
+</code></pre>
+<p>Runs the deploy script located at <code>migrations/deploy.js</code>, injecting a provider configured
+from the workspace's <code>Anchor.toml</code>. For example,</p>
+<pre><code class="language-javascript">// File: migrations/deploys.js
+
+const anchor = require(&quot;@project-serum/anchor&quot;);
+
+module.exports = async function (provider) {
+  anchor.setProvider(provider);
+
+  // Add your deploy script here.
+}
+</code></pre>
+<p>Migrations are a new feature
+and only support this simple deploy script at the moment.</p>
+<h2 id="new"><a class="header" href="#new">New</a></h2>
+<pre><code>anchor new &lt;program-name&gt;
+</code></pre>
+<p>Creates a new program in the workspace's <code>programs/</code> directory initialized with boilerplate.</p>
+<h2 id="test"><a class="header" href="#test">Test</a></h2>
+<pre><code>anchor test
+</code></pre>
+<p>Run an integration test suit against the configured cluster, deploying new versions
+of all workspace programs before running them.</p>
+<p>If the configured network is a localnet, then automatically starts the localnetwork and runs
+the test.</p>
+<p>::: tip Note
+Be sure to shutdown any other local validators, otherwise <code>anchor test</code> will fail to run.</p>
+<p>If you'd prefer to run the program against your local validator use <code>anchor test --skip-local-validator</code>.
+:::</p>
+<p>When running tests we stream program logs to <code>.anchor/program-logs/&lt;address&gt;.&lt;program-name&gt;.log</code></p>
+<p>::: tip Note
+The Anchor workflow <a href="https://www.parity.io/paritys-checklist-for-secure-smart-contract-development/">recommends</a>
+to test your program using integration tests in a language other
+than Rust to make sure that bugs related to syntax misunderstandings
+are coverable with tests and not just replicated in tests.
+:::</p>
+<h2 id="upgrade"><a class="header" href="#upgrade">Upgrade</a></h2>
+<pre><code>anchor upgrade &lt;target/deploy/program.so&gt; --program-id &lt;program-id&gt;
+</code></pre>
+<p>Uses Solana's upgradeable BPF loader to upgrade the on chain program code.</p>
+<h2 id="verify"><a class="header" href="#verify">Verify</a></h2>
+<pre><code>anchor verify &lt;program-id&gt;
+</code></pre>
+<p>Verifies the on-chain bytecode matches the locally compiled artifact.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anchor-version-manager"><a class="header" href="#anchor-version-manager">Anchor Version Manager</a></h1>
+<p>Anchor Version Manager (avm) is provided to manage multiple installations of the anchor-cli binary. This may be required to produce verifiable builds, or if you'd prefer to work with an alternate version.</p>
+<pre><code>Anchor version manager
+
+USAGE:
+    avm &lt;SUBCOMMAND&gt;
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+SUBCOMMANDS:
+    help         Print this message or the help of the given subcommand(s)
+    install      Install a version of Anchor
+    list         List available versions of Anchor
+    uninstall    Uninstall a version of Anchor
+    use          Use a specific version of Anchor
+</code></pre>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<pre><code>avm install &lt;version&gt;
+</code></pre>
+<p>Install the specified version of anchor-cli. The version argument should follow semver versioning. It is also possible to use <code>latest</code> as the version argument to install the latest version.</p>
+<h2 id="list"><a class="header" href="#list">List</a></h2>
+<pre><code>avm list
+</code></pre>
+<p>Lists available versions of anchor-cli.</p>
+<pre><code>0.3.0
+0.4.0
+0.4.1
+0.4.2
+0.4.3
+0.4.4
+0.4.5
+0.5.0
+0.6.0
+0.7.0
+0.8.0
+0.9.0
+0.10.0
+0.11.0
+0.11.1
+0.12.0
+0.13.0
+0.13.1
+0.13.2
+0.14.0
+0.15.0
+0.16.0
+0.16.1
+0.16.2
+0.17.0
+0.18.0
+0.18.2
+0.19.0
+0.20.0  (installed)
+0.20.1  (latest, installed, current)
+</code></pre>
+<h2 id="uninstall"><a class="header" href="#uninstall">Uninstall</a></h2>
+<pre><code>avm uninstall &lt;version&gt;
+</code></pre>
+<h2 id="use"><a class="header" href="#use">Use</a></h2>
+<pre><code>avm use &lt;version&gt;
+</code></pre>
+<p>Use a specific version. This version will remain in use until you change it by calling the same command again. Similarly to <code>avm install</code>, you can also use <code>latest</code> for the version.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anchortoml-reference"><a class="header" href="#anchortoml-reference">Anchor.toml Reference</a></h1>
+<h2 id="provider-required"><a class="header" href="#provider-required">provider (required)</a></h2>
+<p>A wallet and cluster that are used for all commands.</p>
+<p>Example:</p>
+<pre><code class="language-toml">[provider]
+cluster = &quot;localnet&quot;                    # The cluster used for all commands.
+wallet = &quot;~/.config/solana/id.json&quot;     # The keypair used for all commands.
+</code></pre>
+<h2 id="scripts-required-for-testing"><a class="header" href="#scripts-required-for-testing">scripts (required for testing)</a></h2>
+<p>Scripts that can be run with <code>anchor run &lt;script&gt;</code>. The <code>test</code> script is executed by <code>anchor test</code>.</p>
+<p>Example:</p>
+<pre><code class="language-toml">[scripts]
+test = &quot;yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts&quot;
+</code></pre>
+<h2 id="registry"><a class="header" href="#registry">registry</a></h2>
+<p>The registry that is used in commands related to verifiable builds (e.g. when pushing a verifiable build with <code>anchor publish</code>).</p>
+<p>Example:</p>
+<pre><code>[registry]
+url = &quot;https://anchor.projectserum.com&quot;
+</code></pre>
+<h2 id="programs"><a class="header" href="#programs">programs</a></h2>
+<p>Example:</p>
+<pre><code class="language-toml">[programs.localnet]
+my_program = &quot;Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS&quot;
+</code></pre>
+<p>The addresses of the programs in the workspace. </p>
+<p><code>programs.localnet</code> is used during testing on localnet where it's possible to load a program at genesis with the <code>--bpf-program</code> option on <code>solana-test-validator</code>.</p>
+<h2 id="test-1"><a class="header" href="#test-1">test</a></h2>
+<h4 id="startup_wait"><a class="header" href="#startup_wait">startup_wait</a></h4>
+<p>Increases the time anchor waits for the <code>solana-test-validator</code> to start up. This is, for example, useful if you're cloning (see <code>test.validator.clone</code>) many accounts which increases the validator's startup time.</p>
+<p>Example:</p>
+<pre><code class="language-toml">[test]
+startup_wait = 10000
+</code></pre>
+<h4 id="genesis"><a class="header" href="#genesis">genesis</a></h4>
+<p>Makes commands like <code>anchor test</code> start <code>solana-test-validator</code> with a given program already loaded.</p>
+<p>Example</p>
+<pre><code class="language-toml">[[test.genesis]]
+address = &quot;9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin&quot;
+program = &quot;dex.so&quot;
+
+[[test.genesis]]
+address = &quot;22Y43yTVxuUkoRKdm9thyRhQ3SdgQS7c7kB6UNCiaczD&quot;
+program = &quot;swap.so&quot;
+</code></pre>
+<h2 id="testvalidator"><a class="header" href="#testvalidator">test.validator</a></h2>
+<p>These options are passed into the options with the same name in the <code>solana-test-validator</code> cli (see <code>solana-test-validator --help</code>) in commands like <code>anchor test</code>.</p>
+<pre><code class="language-toml">[test.validator]
+url = &quot;https://api.mainnet-beta.solana.com&quot;     # This is the url of the cluster that accounts are cloned from (See `test.validator.clone`).
+warp_slot = 1337                                # Warp the ledger to `warp_slot` after starting the validator. 
+slots_per_epoch = 5                             # Override the number of slots in an epoch.
+rpc_port = 1337                                 # Set JSON RPC on this port, and the next port for the RPC websocket.
+limit_ledger_size = 1337                        # Keep this amount of shreds in root slots.
+ledger = &quot;test-ledger&quot;                          # Set ledger location.
+gossip_port = 1337                              # Gossip port number for the validator.
+gossip_host = &quot;127.0.0.1&quot;                       # Gossip DNS name or IP address for the validator to advertise in gossip.
+faucet_sol = 1337                               # Give the faucet address this much SOL in genesis.
+faucet_port = 1337                              # Enable the faucet on this port.
+dynamic_port_range = &quot;1337 - 13337&quot;             # Range to use for dynamically assigned ports.
+bind_address = &quot;0.0.0.0&quot;                        # IP address to bind the validator ports.
+</code></pre>
+<h4 id="testvalidatorclone"><a class="header" href="#testvalidatorclone">test.validator.clone</a></h4>
+<p>Use this to clone an account from the <code>test.validator.clone.url</code> cluster to the cluster of your test.
+If <code>address</code> points to a program owned by the &quot;BPF upgradeable loader&quot;, anchor (<code>&gt;= 0.23.0</code>) will clone the
+program data account of the program for you automatically.</p>
+<p>Example:</p>
+<pre><code class="language-toml">[test.validator]
+url = &quot;https://api.mainnet-beta.solana.com&quot;
+
+[[test.validator.clone]]
+address = &quot;7NL2qWArf2BbEBBH1vTRZCsoNqFATTddH6h8GkVvrLpG&quot;
+[[test.validator.clone]]
+address = &quot;2RaN5auQwMdg5efgCaVqpETBV8sacWGR8tkK4m9kjo5r&quot;
+[[test.validator.clone]]
+address = &quot;metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s&quot; # implicitly also clones PwDiXFxQsGra4sFFTT8r1QWRMd4vfumiWC1jfWNfdYT
+</code></pre>
+<h4 id="testvalidatoraccount"><a class="header" href="#testvalidatoraccount">test.validator.account</a></h4>
+<p>Use this to upload an account from a <code>.json</code> file.</p>
+<p>Example:</p>
+<pre><code class="language-toml">[[test.validator.account]]
+address = &quot;Ev8WSPQsGb4wfjybqff5eZNcS3n6HaMsBkMk9suAiuM&quot;
+filename = &quot;some_account.json&quot;
+
+[[test.validator.account]]
+address = &quot;Ev8WSPQsGb4wfjybqff5eZNcS3n6HaMsBkMk9suAiuM&quot;
+filename = &quot;some_other_account.json&quot;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reference-links"><a class="header" href="#reference-links">Reference Links</a></h1>
+<ul>
+<li><a href="https://docs.rs/anchor-lang/latest/anchor_lang/accounts/index.html">Accounts Reference</a></li>
+<li><a href="https://docs.rs/anchor-lang/latest/anchor_lang/derive.Accounts.html">Constraints Reference</a></li>
+<li><a href="https://docs.rs/anchor-lang/latest/anchor_lang/__private/enum.ErrorCode.html">Error Codes</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
